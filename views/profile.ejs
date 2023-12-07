@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/lightbulb.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/subjects.css">
+
+	<script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/"><div class="logo"><img src="images/extra/Capture.png" alt="logo"></div></a>
+            
+                <a class="get-started" href="/upload">Upload</a>
+                <a class="get-started" href="/logout">Log out</a> 
+                <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+    
+        </nav>
+        
+    </header>
+    
+    <div class="side-menu" id="side-menu">
+        <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+        
+        <ul>
+            
+                <li><a class="side-menu-login"  href="/logout">Log out</a></li>
+              
+                <li><a class="side-menu-login" href="/upload">Upload</a> </li>
+      
+        </ul>
+    </div>
+
+    <div class="wrapper">
+        <div class="left">
+            <img src="images/icon/profil.png" alt="user" width="100">
+        </div>
+        <div class="right">
+            <div class="info">
+                <h3>Information</h3>
+                <div class="info_data">
+                    <div class="data">
+                        <h4>Name</h4>
+                        <p><%= user.name%></p>
+                    </div>
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p><%= user.email%></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        
+    </div>
+
+    <div>            hhh          </div>
+    <div>        hhhhhh   </div>
+    <div>    hhhh   </div>
+    <div></div>
+
+
+    
+	<center>
+        <div class="title2" id="inorganic">
+            <br>
+            <br>
+            <br>
+            <br>
+            <span>My Videos</span>
+            <div class="shortdesc2">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="ccardbox2">
+            <% user.videos = user.videos.reverse();
+                i=1;
+                user.videos.forEach((video)=>{ %>
+                    <a href="/watch/<%= video.watch %>">
+                        <div class="dcard2"><span class="tag" ><%= i%>/<%= user.videos.length %></span>
+                            <div class="fpart2">
+                                    <img src='<%= video.thumbnail.split("public")[1] %>'>
+                            </div>
+                        </div>
+                    </a>
+            <% i++; }) %>
+        </div>
+
+		
+	</center>
+<br><br>
+	
+
+</body>
+</html>

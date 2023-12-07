@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title></title>
+   <link rel="shortcut icon" type="png" href="icon/favicon.png">
+   
+   <link rel="stylesheet" href="/css/style1.css">
+   <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" type="text/css" href="/css/subjects.css">
+
+</head>
+<body>
+   <%- include("./partials/nav.ejs") %>
+
+<div class="container">
+
+   <div class="main-video-container">
+      <video src='<%= video.filePath.split("public")[1] %>' loop controls class="main-video"></video>
+      <h3 class="main-vid-title"><%= video.title %></h3>
+      <h3 class="main-vid-views">views :  <%= video.views %></h3>
+      <hr>
+      <hr>
+      <hr>
+      <h3 class="main-vid-views">description :  <%= video.description %></h3>
+   </div>
+
+
+
+ 
+   <div class="ccard">
+      <h1>Related videos</h1>
+      <center>
+         <div class="ccardbox">
+            <% videos.forEach((v)=>{ %>
+               <%if(video.category == v.category) { %>
+                  <div class="dcard">
+                     <div class="fpart"><img src='<%= v.thumbnail.split("public")[1] %>'></div>
+                     <a href="/watch/<%= v.watch %>"><div class="spart"><%= v.title %></div></a>
+                  </div>
+               <%}%>
+            <%}) %>
+         </div>
+      </center>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>

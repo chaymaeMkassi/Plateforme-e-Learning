@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/lightbulb.png">
+	<title>Computer Science Courses on LearnEd</title>
+	<link rel="stylesheet" type="text/css" href="css/subjects.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	
+</head>
+<body>	
+	<%- include("./partials/nav.ejs") %>
+<!-- MAIN Heading of Page -->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<!-- Courses Available -->
+	<div class="inbt">
+		Result of your research...
+	</div>
+
+	<div class="ccard">
+        <%  i = 0;%>
+            
+        <center>
+            <div class="ccardbox">
+                <% videos.forEach((video)=>{ %>
+                    <%if(video.title.includes(searchKey)) { %>
+                        <%i++%>
+                        <div class="dcard">
+                            <div class="fpart"><img src='<%= video.thumbnail.split("public")[1] %>'></div>
+                            <a href="/watch/<%= video.watch %>"><div class="spart"><%= video.title %></div></a>
+                        </div>
+                    <%}%>
+                <%}) %>
+
+            </div>
+        </center>
+        <% if(i == 0) {%>
+            <div class="inbt">
+                Sorry
+            </div>
+        <% } %>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<br>
+<br>
+<br>
+<br>
+	<%- include("./partials/footer.ejs") %>
+</body>
+</html>

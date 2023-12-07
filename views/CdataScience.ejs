@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/lightbulb.png">
+	<title>Computer Science Courses on LearnEd</title>
+	<link rel="stylesheet" type="text/css" href="css/subjects.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>	
+	<%- include("./partials/nav.ejs") %>
+	<div class="side-menu" id="side-menu">
+		<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+		
+		<ul>
+			<% if (typeof isLogin !== "undefined" && isLogin) { %>
+				<li><a class="side-menu-login"  href="/profile">Profile</a></li>
+				
+			<% } else {%>  
+				<li><a class="side-menu-login" href="/login">Get Started</a> </li>
+			<% } %> 
+		</ul>
+	</div>
+<!-- MAIN Heading of Page -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="title">
+	<span>Data sciences Courses<br>on CoursArea</span>
+	<div class="shortdesc">
+		<p>Learn Data sciences <br></p>
+	</div>
+</div>
+<!-- Some KeyWords related to Topic -->
+	<div class="course">
+		<div class="cbox">
+		<div class="det"><a href="">Business Inteligence</a></div>
+		<div class="det"><a href="">Data Analyse</a></div>
+		</div>
+	</div>
+
+
+<!-- Courses Available -->
+	<div class="inbt">
+		Accelerate your career with Data sciences videos
+	</div>
+
+	<div class="ccard">
+	<center>
+		<div class="ccardbox">
+			<% videos.forEach((video)=>{ %>
+				<%if(video.category == "dataScience") { %>
+					<div class="dcard">
+						<div class="fpart"><img src='<%= video.thumbnail.split("public")[1] %>'></div>
+						<a href="/watch/<%= video.watch %>"><div class="spart"><%= video.title %></div></a>
+					</div>
+				<%}%>
+			<%}) %>
+		</div>
+	</center>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<br>
+<br>
+<br>
+<br>
+	<%- include("./partials/footer.ejs") %>
+</body>
+</html>

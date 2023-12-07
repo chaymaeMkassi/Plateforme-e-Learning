@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/lightbulb.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="css/loginStyle.css">
+</head>
+<body>
+    <div class="container">
+
+        <form class="form" id="login" action="/login" method="post">
+            <h1 class="form__title">Login</h1>
+            <div class="form_message form_message--error"></div>
+            <div class="form__input-group">
+                <input type="text" name="email" class="form__input" autofocus placeholder="Email">
+                <% if (error != "") { %>
+                    <div class="form__input-error-message">
+                    <%= error %>
+                    </div>
+                <% } %>
+                <% if (errorE != "") { %>
+                    <div class="form__input-error-message">
+                    <%= errorE %>
+                    </div>
+                <% } %>
+            </div>
+            <div class="form__input-group">
+                <input type="password" name="password" class="form__input" autofocus placeholder="Password">
+                <% if (error != "") { %>
+                    <div class="form__input-error-message">
+                    <%= error %>
+                    </div>
+                <% } %>
+                <% if (errorP != "") { %>
+                    <div class="form__input-error-message">
+                    <%= errorP %>
+                    </div>
+                <% } %>
+            </div>
+            <button class="form__button" value="login" type="submit">Continue</button>
+            
+            <p class="form__text">
+                <a class="form__link" href="/register" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+        
+    </div>
+    <script src="./s"></script>
+</body>

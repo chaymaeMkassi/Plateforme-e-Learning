@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en">
+<head>
+   <link rel="shortcut icon" type="png" href="images/icon/lightbulb.png">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="css/upload.css">
+
+   <title>Document</title>
+</head>
+
+<body>
+   <script type="text/javascript">
+      function fileSelected() {
+         var fileName = document.getElementById("file").files[0].name;
+         document.getElementById("filename").innerHTML = fileName;
+      }
+   </script>
+   <div class="container">
+      <div class="title">Video Information</div>
+      <div class="content">
+         <form action="/upload-video" method="post" enctype="multipart/form-data">
+            <div class="user-details">
+               <div class="input-box1">
+                  <span class="details"> Select video</span>
+                  <input type="file" name="video" accept="video/mp4,video/*" required>
+               </div>
+               <div class="input-box1">
+                  <span class="details"> Select thumbnail</span>
+                  <input type="file" name="thumbnail" accept="image/*" required>
+               </div>
+               <div class="input-box">
+                  <span class="details"> Title</span>
+                  <input type="text"  name="title" required>
+               </div>
+               
+               <div class="input-box">
+                  <span class="details"> Description</span>
+                  <input type="text" name="description" required>
+               </div>
+            </div>
+            <div class="gender-details">
+               <input type="radio" name="category" value="web" id="dot-1">
+               <input type="radio" name="category" value="programming" id="dot-2">
+               <input type="radio" name="category" value="network" id="dot-3">
+               <input type="radio" name="category" value="dataScience" id="dot-4">
+               <span class="gender-title">Category</span>
+               <div class="category">
+                  <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">web</span>
+                  </label>
+                  <label for="dot-2">
+                     <span class="dot two"></span>
+                     <span class="gender">programming</span>
+                  </label>
+                  <label for="dot-3">
+                     <span class="dot three"></span>
+                     <span class="gender">network</span>
+                  </label>
+                  <label for="dot-4">
+                     <span class="dot four"></span>
+                     <span class="gender">dataScience</span>
+                  </label>
+                  
+               </div>
+            </div>
+            <div class="button">
+               <input type="submit" value="Upload">
+            </div>
+         </form>
+      </div>
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<header id="header">
+    <nav>
+        <a href="/"><div class="logo"><img src="/images/extra/Capture.png" alt="logo"></div></a>
+        <% if (typeof navMenu !== "undefined" && navMenu) { %>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#services_section">Courses</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+            <form action="/search" method="post" id="search">
+                <div class="srch">
+                    <input type="text" class="search" placeholder="Search here..." name="searchKey">
+                    <div class="searchIcon">
+                        <input type="submit" >
+                    </div>
+                </div>
+            </form>
+        
+        <% } %> 
+        
+        
+        <% if (typeof isLogin !== "undefined" && isLogin) { %>
+            <a class="get-started" href="/profile">Profile</a>
+        <% } else {%>  
+            <a class="get-started" href="/login">Get Started</a> 
+        <% } %>    
+        <img src="/images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+    
+    </nav>
+    
+</header>
